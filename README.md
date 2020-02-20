@@ -1,4 +1,4 @@
-# LanguageIdentifier
+# Language Identifier
 Fun nltk-based language identifier. Will probabilistically determine if an input word is English or Spanish. 
 Could be updated with other language models if available corpus.
 
