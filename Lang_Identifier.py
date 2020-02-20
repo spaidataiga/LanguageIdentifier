@@ -1,8 +1,8 @@
 import nltk
 
 def biletter(words):
-	"""Creates two-letter sequences within words. Used to create probability distribution
-	for language models below"""
+# 	Creates two-letter sequences within words. Used to create probability distribution
+# 	for language models below
     bi_letters = []
     for word in words:
         if len(word) < 2:
@@ -13,10 +13,10 @@ def biletter(words):
     return bi_letters
 
 def create_LM(path):
-	"""Allows generation of other language models. Makes a probability distribution
-	based on sequences of 2 letters in inputted corpus.
-	Input parameter "path" should be the path to the input corpus
-	Outputs a probability distribution for the language of that corpus. """ 
+# 	Allows generation of other language models. Makes a probability distribution
+# 	based on sequences of 2 letters in inputted corpus.
+# 	Input parameter "path" should be the path to the input corpus
+# 	Outputs a probability distribution for the language of that corpus.
     f=open(path,encoding="utf-8")
     raw =f.read()
     words = nltk.word_tokenize(raw)
@@ -27,10 +27,10 @@ def create_LM(path):
     return bi_probs
 
 def eng_or_es(word):
-	"""Will determine if the probability of this word being English or Spanish is
-	greater and will return the according value.
+# 	Will determine if the probability of this word being English or Spanish is
+# 	greater and will return the according value.
 
-	This section requires some updating if more language models are introduced."""
+# 	This section requires some updating if more language models are introduced.
     word = word.lower()
     en_prob = 1
     es_prob = 1
@@ -52,12 +52,12 @@ en_probs = create_LM('texten.txt')
 
 
 # The input game.
-print("To exit, write 'End'")
+print("\nTo exit at any point, write 'End'")
 txt = ""
 while (txt != "End"):
 	txt = input("\n Please enter a word // Escribir una palabra \n>> ")
 	if txt == "End":
-		print("Goodbye!")
+		print("Goodbye! Adios!")
 		break
 	if (eng_or_es(txt) == "English"):
 		print("That's an English word!")
